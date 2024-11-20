@@ -1,0 +1,27 @@
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo{
+  font-weight: 700;
+  font-size: 35px;
+}
+.nav-list{
+  list-style: none;
+   
+}
+.nav-item a {
+  text-decoration: none;
+  color: #CAC8CA;
+  font-weight: 500;
+  font-size: 25px;
+}
+.nav-item{
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+.like{
+  width: 50px;
+}
