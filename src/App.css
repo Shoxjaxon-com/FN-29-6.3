@@ -1,7 +1,8 @@
-.header{
+/* .header{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 55px;
 }
 .logo{
   font-weight: 700;
@@ -25,3 +26,68 @@
 .like{
   width: 50px;
 }
+.card1{
+  border: 1px solid black;
+  padding: 10px  20px;
+  margin-bottom: 15px;
+  width: 600px;
+  border-radius: 25px;
+}
+.img img{
+  width: 100%;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.title{
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+.text{
+  font-weight: 400;
+  font-size: 15px;
+  color: #979597;
+  margin-bottom: 15px;
+}
+.year{
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ margin-bottom: 15px;
+}
+.yil{
+  font-weight: 400;
+  font-style: 10px;
+}
+#hero{
+ display: flex;
+ gap: 50px;
+ justify-content: center;
+  flex-wrap: wrap;
+}
+.kino-year{
+  display: flex;
+  gap: 250px;
+  margin-bottom: 15px;
+}
+.cinema{
+  display: flex;
+  gap: 150px;
+  margin-bottom: 15px;
+}
+.aktyor{
+  display: flex;
+  gap: 210px;
+  margin-bottom: 15px;
+}
+.til{
+  display: flex;
+  gap: 235px;
+  margin-bottom: 15px;
+}
+.mukofot{
+  display: flex;
+  gap: 110px;
+} */

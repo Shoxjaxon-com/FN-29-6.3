@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../src/App.css'
 import like from './assets/heart.png'
-import data from './assets/data/movies.json'
- function App(props) {
-  const data = props
-  console.log(data);
+import movies from './assets/data/movies.json'
+function App() {
+  const data = movies
+  const [couneter , SetCounter] =useState(0)
   
+  function hedeleClick(e){
+    e.preventDefault();
+    SetCounter (couneter + 1)
+  }
   return (
     <div>
       <div className="kino">
@@ -23,48 +27,52 @@ import data from './assets/data/movies.json'
                 </li>
               </ul>
             </div>
-            <div className="like">
-              <a href="#"><img src={like} alt="" className="like" /></a>
+            <div>
+              <h2>{couneter} likes</h2>
             </div>
           </div>
 
-          <div className="hero">
-           <div>
-            {
-              data.length > 0 && data.map((element)=>{
-                <div className="cards">
-                  <div className="img">
-                    <img src={element.Images} alt="" />
-                  </div>
-                  <h4>{element.Title}</h4>
-                  <p>{element.Plot}</p>
-                  <div className="year">
-                    <span> <h4>Yil: <br /> {element.Year}</h4></span>
-                    <span> <h4>Reyting: <br /> {element.Rated}</h4></span>
-                  </div>
-                  <div className="sana">
-                    <span> <h4>Chiqarilgan sana: <br /> {element.Released}</h4></span>
-                    <span> <h4>Davomiiyligi: <br /> {element.Runtime}</h4></span>
-                  </div>
-                  <div className="yozuvchi">
-                    <span> <h4>Yozuvchi: <br /> {element.Director}</h4></span>
-                    <span> <h4>Aktyorlar: <br /> {element.Actors}</h4></span>
-                  </div>
-                  <div className="til">
-                    <span> <h4>Til: <br /> {element.Language}</h4></span>
-                    <span> <h4>Mamlakat: <br /> {element.Country}</h4></span>
-                  </div>
-                  <div className="imd">
-                    <span> <h4>Mukofontlar: <br /> {element.Awards}</h4></span>
-                    <span> <h4>Mamlakat: <br /> {element.imdbRating}</h4></span>
-                  </div>
+          <div>
+            <div id='hero'>
+              {
+                data.length > 0 && data.map((element) => {
+                  console.log(element);
 
-                  
-                </div>
-              })
-            }
+                  return (
+                    <div className="card-conteiner">
+                    <div key={element.id} className="card1">
+                      <img src={element.Images} alt="" />
+                      <h2 className="title">{element.Title}</h2>
+                      <p className="plot">{element.Plot}</p>
+                      <div className="info">
+                        <div className="column">
+                          <h5>Yil: {element.Year}</h5>
+                          <h5>Chiqirilgan sana: {element.Released}</h5>
+                          <h5>Janr: {element.Genre}</h5>
+                          <h5>Yozuvchi: {element.Writer}</h5>
+                          <h5>Til: {element.Language}</h5>
+                          <h5>Mukofotlar: {element.Awards}</h5>
+                        </div>
+                        <div className="column">
+                          <h5>Reyting: {element.Rated}</h5>
+                          <h5>Davomiyligi: {element.Runtime}</h5>
+                          <h5>Rejissor: {element.Director}</h5>
+                          <h5>Aktyorlar: {element.Actors}</h5>
+                          <h5>Mamlakat: {element.Country}</h5>
+                          <h5>IMDB reytingi: {element.imdbRating}</h5>
+                      <button className='like-button' onClick={hedeleClick}>Like !!!</button>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  )
+                })
+              }
+
             </div>
           </div>
+
+
         </div>
       </div>
     </div>
